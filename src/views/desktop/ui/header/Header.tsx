@@ -1,0 +1,55 @@
+'use client'
+
+import Battery from 'public/assets/icons/desktop/battery.svg'
+import Search from 'public/assets/icons/desktop/search.svg'
+import Toggle from 'public/assets/icons/desktop/toggle.svg'
+import Wifi from 'public/assets/icons/desktop/wifi.svg'
+import { useEffect, useState } from 'react'
+import useMedia from 'use-media'
+
+function getDate() {
+	const date = new Date()
+
+	return {
+		weekday: date.toLocaleString('en', { weekday: 'short' }),
+		date: date.toLocaleString('en', { month: 'short', day: 'numeric' }),
+		time: date.toLocaleString('en', { hour: 'numeric', minute: '2-digit' }),
+	}
+}
+
+export const Header = () => {
+	const [date, setDate] = useState(getDate())
+	const isMobile = useMedia({ maxWidth: '768px' })
+
+	useEffect(() => {
+		setDate(getDate())
+		const interval = setInterval(() => {
+			setDate(getDate())
+		}, 1000)
+		return () => clearInterval(interval)
+	}, [isMobile])
+
+	return (
+		<header className='w-full px-[24px] h-[40px] flex justify-between items-center z-50 font-normal text-[20px] bg-primary'>
+			<nav className='flex-1'>
+				<ul className='list-none flex gap-[30px] max-md:hidden *:text-[20px] *:cursor-pointer *:font-normal *:tracking-[1px] *:transition-all *:duration-default *:ease-linear hover:*:text-white'>
+					<li className='whitespace-nowrap font-bold tracking-[2px] pl-[20px] max-md:hidden'>
+						Alexandr Obraztsov
+					</li>
+					<li>About</li>
+					<li>Projects</li>
+					<li>Contact</li>
+				</ul>
+			</nav>
+			<section className='flex flex-1 gap-[15px] flex-row items-center h-[30px] justify-end'>
+				<Battery className='w-[35.7px] h-[17px]' />
+				<Wifi className='w-[25px] h-[17px]' />
+				<Search className='w-[24px] h-[24px]' />
+				<Toggle className='w-[24px] h-[24px] mr-[20px]' />
+				<span>{date.weekday}</span>
+				<span>{date.date}</span>
+				<span>{date.time}</span>
+			</section>
+		</header>
+	)
+}

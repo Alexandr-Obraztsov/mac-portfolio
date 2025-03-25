@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--transition-delay: 0.1s;
+	--animation-delay: 0.5s;
+
+	/* Ярлыки */
+	--desktop-label-size: 100px;
+	--desktop-gap: 30px;
+	--desktop-label-font-size: 20px;
+
+	--menu-icon-size: 70px;
+
+	@media screen and (max-width: 768px) {
+		--desktop-label-size: 120px;
+		--desktop-label-font-size: 20px;
+
+		--menu-icon-size: 50px;
+	}
+
+	/* Тема */
+	--wallpaper: url(/assets/wallpapers/light.jpg);
+
+	--system-primary: rgba(100, 39, 99, 0.58);
+	--system-secondary: rgba(255, 255, 255, 0.5);
+	--system-text: rgba(255, 255, 255, 1);
+
+	/* Плеер */
+	--music-bg: rgba(123, 6, 125, 0.54);
+
+	/* HiLetter */
+	--hi-letter-background: rgba(255, 255, 255, 0.8);
+	--hi-letter-primary: rgba(106, 30, 204, 1);
+	--hi-letter-secondary: rgba(187, 135, 255, 1);
+	--hi-letter-stroke: rgba(233, 217, 255, 1);
+	--hi-letter-text-primary: rgba(26, 0, 61, 1);
+	--hi-letter-text-secondary: rgba(246, 239, 255, 1);
+
+	/* AboutMe */
+	--about-me-primary: rgba(255, 255, 255, 0.6);
+	--about-me-secondary: rgba(241, 241, 241, 0.58);
+	--about-me-accent: #1a003d;
+	--about-me-background: #f2f0ed;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--wallpaper: url(/assets/wallpapers/night.jpg);
+
+		--system-primary: rgba(181, 181, 185, 0.17);
+		--system-secondary: rgba(181, 181, 185, 0.38);
+		--system-text: rgba(176, 185, 206, 1);
+
+		/* Плеер */
+		--music-bg: rgba(107, 107, 107, 0.35);
+
+		/* AboutMe */
+		/* --about-me-primary: rgba(22, 27, 54, 0.7); */
+		/* --about-me-secondary: rgba(42, 46, 117, 0.7); */
+	}
+}
+
+body {
+	color: var(--system-text);
+	background: var(--system-primary);
+	font-family: Arial, Helvetica, sans-serif;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+* {
+	-webkit-user-drag: none;
+	user-select: none;
+}
