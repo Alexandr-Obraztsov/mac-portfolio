@@ -1,4 +1,7 @@
+import Image from 'next/image'
 import { Card } from '../card/Card'
+import image from 'public/assets/images/about/card3.png'
+
 export const Card3 = () => {
 	return (
 		<Card status='Skills'>
@@ -19,8 +22,14 @@ export const Card3 = () => {
 				</div>
 			</div>
 			<div className='flex h-full'>
-				<div className='p-[16px_25px] border-r border-black'>
-					<div className='bg-red-300 w-[250px] h-full'></div>
+				<div className='p-[16px_25px] w-[300px] border-r border-black shrink-0'>
+					<Image
+						src={image}
+						alt='computer'
+						className='h-full w-[250px] object-cover'
+						width={250}
+						height={300}
+					/>
 				</div>
 				<table className='w-full h-full'>
 					<thead className='*:text-left'>

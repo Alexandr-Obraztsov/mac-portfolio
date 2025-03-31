@@ -64,7 +64,7 @@
 
 body {
 	color: var(--system-text);
-	background: var(--system-primary);
+	background: black;
 	font-family: Arial, Helvetica, sans-serif;
 	width: 100vw;
 	height: 100vh;

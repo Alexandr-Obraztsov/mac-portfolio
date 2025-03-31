@@ -20,7 +20,7 @@ export const Card1 = () => {
 				className='absolute top-[15px] right-[15px] w-[460px] h-[210px]'
 			/>
 			<span
-				className='block absolute w-[200px] h-[100px] left-[325px] top-[125px] bg-[#F2F0ED] bg-opacity-80
+				className='block rounded-tr-2xl absolute w-[200px] h-[100px] left-[325px] top-[125px] bg-[#F2F0ED] bg-opacity-80
 '
 			></span>
 			<span className='absolute block left-[557px] top-[269px] text-[24px] leading-[33px] -tracking-[0.02em]  font-bold text-[#1A003D] font-open-sans'>

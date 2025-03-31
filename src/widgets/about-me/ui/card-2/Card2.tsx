@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import card2 from 'public/assets/icons/apps/about/card2.png'
+import card2 from 'public/assets/images/about/card2.png'
 import { Card } from '../card/Card'
 export const Card2 = () => {
 	return (
@@ -22,8 +22,8 @@ export const Card2 = () => {
 				ones I have already mastered. I also enjoy solving algorithmic problems.
 				<br />
 				<br />
-				Since childhood, I've loved creating something, and after getting to
-				know a computer, I quickly found entertainment for myself — creating
+				Since childhood, I&apos;ve loved creating something, and after getting
+				to know a computer, I quickly found entertainment for myself — creating
 				modifications for games.
 				<br />
 				<br />

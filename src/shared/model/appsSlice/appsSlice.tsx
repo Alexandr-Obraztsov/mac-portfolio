@@ -7,7 +7,7 @@ const initialState = {
 		{
 			id: v1(),
 			type: AppTypes.HI,
-			zIndex: 1,
+			zIndex: 0,
 			isActive: true,
 		},
 	] as App[],

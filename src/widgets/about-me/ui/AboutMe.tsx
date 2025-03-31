@@ -1,10 +1,24 @@
+'use client'
+
 import { useApp } from '@/shared/lib'
 import { AppProps } from '@/shared/model/App.types'
 import { Draggable } from '@/shared/ui'
 import { Card1 } from './card-1/Card1'
+import { useState } from 'react'
+import { Card2 } from './card-2/Card2'
+import { Card3 } from './card-3/Card3'
+import { Card4 } from './card-4/Card4'
+
+const cards = [Card1, Card2, Card3, Card4]
 
 export const AboutMe = ({ app }: AppProps) => {
 	const { closeThisApp } = useApp({ app })
+
+	const [cardIndex, setCardIndex] = useState(0)
+
+	const handleClickCard = () => {
+		setCardIndex((cardIndex + 1) % cards.length)
+	}
 
 	return (
 		<Draggable
@@ -28,8 +42,8 @@ export const AboutMe = ({ app }: AppProps) => {
 						About Me
 					</h1>
 				</div>
-				<div className='w-full p-[26px]'>
-					<Card1 />
+				<div className='w-full p-[26px]' onClick={handleClickCard}>
+					{cards[cardIndex]()}
 				</div>
 			</div>
 		</Draggable>
