@@ -14,6 +14,7 @@ import 'swiper/css'
 import 'swiper/css/effect-cards'
 import { Card5 } from './card-5/Card5'
 import { Card6 } from './card-6/Card6'
+import { Card7 } from './card-7/Card7'
 
 export const AboutMe = ({ app }: AppProps) => {
 	const { closeThisApp } = useApp({ app })
@@ -47,11 +48,13 @@ export const AboutMe = ({ app }: AppProps) => {
 						grabCursor={true}
 						modules={[EffectCards]}
 					>
-						{[Card1, Card2, Card3, Card4, Card5, Card6].map((card, i) => (
-							<SwiperSlide key={i} className='rounded-xl'>
-								{card()}
-							</SwiperSlide>
-						))}
+						{[Card1, Card2, Card3, Card4, Card5, Card6, Card7].map(
+							(card, i) => (
+								<SwiperSlide key={i} className='rounded-xl'>
+									{card()}
+								</SwiperSlide>
+							)
+						)}
 					</Swiper>
 				</div>
 			</div>
