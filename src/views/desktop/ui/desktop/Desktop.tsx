@@ -45,7 +45,7 @@ export const Desktop = () => {
 		dispatch(openApp({ type: appType }))
 	}
 	return (
-		<main className='relative p-[10px] w-full grow grid grid-flow-row grid-cols-[repeat(auto-fill,minmax(var(--desktop-label-size),1fr))] grid-rows-[repeat(auto-fill,minmax(var(--desktop-label-size),1fr))] gap-[--desktop-gap] pb-5'>
+		<main className='relative p-[10px] w-full grow grid grid-flow-row grid-cols-[repeat(auto-fill,minmax(var(--desktop-label-size),1fr))] grid-rows-[repeat(auto-fill,minmax(var(--desktop-label-size),1fr))] gap-[--desktop-gap] pb-20'>
 			{labels.map(label => (
 				<Label
 					key={label.title}

@@ -1,8 +1,6 @@
 'use client'
 
-import Battery from 'public/assets/icons/desktop/battery.svg'
 import Toggle from 'public/assets/icons/desktop/toggle.svg'
-import Wifi from 'public/assets/icons/desktop/wifi.svg'
 import { useEffect, useState } from 'react'
 import useMedia from 'use-media'
 
@@ -41,8 +39,6 @@ export const Header = () => {
 				</ul>
 			</nav>
 			<section className='flex flex-1 gap-[15px] flex-row items-center h-[30px] justify-end'>
-				<Battery className='w-[35.7px] h-[17px]' />
-				<Wifi className='w-[25px] h-[17px]' />
 				<Toggle className='w-[20px] h-[20px]' />
 				<span>{date.weekday}</span>
 				<span>{date.date}</span>

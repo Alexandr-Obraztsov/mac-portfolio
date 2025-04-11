@@ -6,7 +6,8 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint"
+		"lint": "next lint",
+		"prod": "vercel --prod"
 	},
 	"dependencies": {
 		"@reduxjs/toolkit": "^2.6.0",
@@ -20,6 +21,7 @@
 		"react-redux": "^9.2.0",
 		"redux": "^5.0.1",
 		"steiger": "^0.5.5",
+		"swiper": "^11.2.6",
 		"use-media": "^1.5.0",
 		"use-sound": "^5.0.0",
 		"uuid": "^11.1.0",

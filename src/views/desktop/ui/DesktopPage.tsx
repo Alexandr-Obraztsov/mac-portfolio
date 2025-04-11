@@ -52,7 +52,6 @@ export const DesktopPage = () => {
 				<Lottie
 					lottieRef={lottieRef}
 					animationData={HelloWhite}
-					loop={false}
 					autoplay={false}
 				/>
 			</div>

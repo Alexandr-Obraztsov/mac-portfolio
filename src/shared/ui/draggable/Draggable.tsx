@@ -62,7 +62,7 @@ export const Draggable = ({
 	return (
 		<div
 			onMouseDown={onMouseDown}
-			className='absolute -translate-x-1/2 -translate-y-1/2 pointer-events-auto'
+			className='absolute -translate-x-1/2 -translate-y-1/2 pointer-events-auto z-[999]'
 			style={{
 				left: pos?.x + 'px',
 				top: pos?.y + 'px',

@@ -21,7 +21,7 @@ export const Card3 = () => {
 					</p>
 				</div>
 			</div>
-			<div className='flex h-full'>
+			<div className='flex h-full overflow-hidden'>
 				<div className='p-[16px_25px] w-[300px] border-r border-black shrink-0'>
 					<Image
 						src={image}
@@ -31,33 +31,35 @@ export const Card3 = () => {
 						height={300}
 					/>
 				</div>
-				<table className='w-full h-full'>
+				<table className='w-full table-fixed'>
 					<thead className='*:text-left'>
 						<tr className='border-b border-black'>
-							<th className='border-r border-black p-2 font-bold font-open-sans italic text-black'>
+							<th className='border-r border-black p-2 font-bold font-open-sans text-black w-1/3'>
 								Languages and technologies
 							</th>
-							<th className='border-r border-black p-2 font-bold font-open-sans italic text-black'>
-								Tools and libraries
+							<th className='border-r border-black p-2 font-bold font-open-sans text-black w-1/3'>
+								Tools
+								<br />
+								and libraries
 							</th>
-							<th className='p-2 font-bold font-open-sans italic text-black'>
+							<th className='p-2 font-bold font-open-sans text-black w-1/3'>
 								Design and prototyping
 							</th>
 						</tr>
 					</thead>
 					<tbody className='*:align-top'>
 						<tr>
-							<td className='border-r border-black p-2 text-sm font-open-sans text-black'>
+							<td className='border-r border-black p-2 text-sm font-open-sans text-black w-1/3'>
 								JavaScript (ES6+), TypeScript React, Redux / RTK, React Router
 								Next.js HTML / CSS / SCSS, TailwindCSS, Styled Components
 								Material-UI, React Hook Form, Storybook
 							</td>
-							<td className='border-r border-black p-2 text-sm font-open-sans text-black'>
+							<td className='border-r border-black p-2 text-sm font-open-sans text-black w-1/3'>
 								Jest / React Testing Library for testing Webpack, Vite (for
 								building projects) Axios / Fetch API (for working with the API)
 								ESLint / Prettier (for code styling)
 							</td>
-							<td className='p-2 text-sm font-open-sans text-black'>
+							<td className='p-2 text-sm font-open-sans text-black w-1/3'>
 								UI design and implementation in Figma Basics of working with
 								graphic editors for developing visual components
 							</td>
