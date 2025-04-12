@@ -9,25 +9,43 @@ export const Card5 = () => {
 				style={{ counterReset: 'step-counter' }}
 			>
 				<EducationStep
-					title='Engineer
- in Information Technology'
+					title={
+						<>
+							Engineer
+							<br />
+							in Information Technology
+						</>
+					}
 					organization='BSUIR'
 					date='2023 - present'
 				/>
+				<span className='h-[100px] w-px bg-black'></span>
 				<EducationStep
-					title='Front-end developer course'
+					title={
+						<>
+							Front-end developer
+							<br />
+							course
+						</>
+					}
 					organization='IT-INCUBATOR'
 					date='2024 - 2025'
 				/>
+				<span className='h-[100px] w-px bg-black'></span>
 				<EducationStep
-					title='Traineeship
-as front-end developer'
+					title={
+						<>
+							Traineeship
+							<br />
+							as front-end developer
+						</>
+					}
 					organization='IT-INCUBATOR'
 					date='2024 - present'
 				/>
 			</ol>
 
-			<div className='bg-about-me-accent w-full h-full rounded-t-xl flex justify-center items-center text-[#F2F0ED] font-bebas text-[150px]'>
+			<div className='bg-about-me-accent w-full h-full rounded-t-xl flex justify-center items-center text-[#F2F0ED] font-bebas text-[150px] tracking-tight'>
 				EDUCATION
 			</div>
 		</Card>

@@ -2,7 +2,7 @@ import { Card } from '../card/Card'
 import Looper from 'public/assets/images/about/card7.svg'
 import Gmail from 'public/assets/icons/apps/about-me/gmail.svg'
 import Telegram from 'public/assets/icons/apps/about-me/telegram.svg'
-import LinkedIn from 'public/assets/icons/apps/about-me/linkedin.svg'
+import LinkedIn from 'public/assets/icons/apps/about-me/linkedIn.svg'
 
 const contactInfo = [
 	{
@@ -22,10 +22,10 @@ const contactInfo = [
 export const Card7 = () => {
 	return (
 		<Card status='Contacts' statusBar>
-			<h1 className='text-[96px] font-bebas text-about-me-accent leading-none text-center mt-14'>
+			<h1 className='text-[126px] font-bebas text-about-me-accent leading-none text-center mt-12 tracking-tight'>
 				Contact me
 			</h1>
-			<div className='mx-auto w-[556px] bg-white border p-[16px_60px] flex flex-col gap-5 border-black rounded-xl z-10'>
+			<div className='mx-auto mt-3 w-[556px] bg-white border p-[16px_60px] flex flex-col gap-5 border-black rounded-xl z-10'>
 				{contactInfo.map(({ icon, value }) => (
 					<div key={value} className='flex items-center gap-6'>
 						<div className='size-[50px] flex justify-center items-center rounded-xl border border-about-me-accent'>

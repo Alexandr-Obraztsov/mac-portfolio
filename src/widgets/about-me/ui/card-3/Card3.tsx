@@ -7,17 +7,17 @@ export const Card3 = () => {
 		<Card status='Skills'>
 			<div className='border-b border-t border-black h-[111px] flex items-center'>
 				<div className='p-[0_25px] border-r border-black h-full flex items-center flex-shrink-0'>
-					<h1 className='font-bebas text-[96px] text-about-me-accent'>
+					<h1 className='font-bebas text-[96px] text-about-me-accent tracking-tight'>
 						HARD{' '}
 						<span className='text-transparent [-webkit-text-stroke:_1px_var(--about-me-accent)]'>
 							SKILLS
 						</span>
 					</h1>
 				</div>
-				<div className='p-[0_25px_0_16px]'>
-					<p className='font-open-sans text-base italic text-black'>
-						During my studies and work, I have mastered and successfully apply
-						various elements.
+				<div className='pb-[5px] pl-[13px]'>
+					<p className='font-open-sans text-base leading-5 italic text-black tracking-tight'>
+						During my studies and work, I have mastered
+						<br /> and successfully apply various elements.
 					</p>
 				</div>
 			</div>
@@ -35,7 +35,9 @@ export const Card3 = () => {
 					<thead className='*:text-left'>
 						<tr className='border-b border-black'>
 							<th className='border-r border-black p-2 font-bold font-open-sans text-black w-1/3'>
-								Languages and technologies
+								Languages
+								<br />
+								and technologies
 							</th>
 							<th className='border-r border-black p-2 font-bold font-open-sans text-black w-1/3'>
 								Tools
@@ -43,7 +45,9 @@ export const Card3 = () => {
 								and libraries
 							</th>
 							<th className='p-2 font-bold font-open-sans text-black w-1/3'>
-								Design and prototyping
+								Design
+								<br />
+								and prototyping
 							</th>
 						</tr>
 					</thead>

@@ -6,11 +6,11 @@ type Props = {
 
 export const StatusBar = ({ status }: Props) => {
 	return (
-		<div className='p-[15px_35px] flex items-center justify-between'>
+		<div className='py-[15px] flex items-center justify-between'>
 			{cardTypes.map(card => (
 				<span
 					key={card}
-					className={`flex-1 block font-open-sans text-center text-black text-[20px] ${
+					className={`w-0 flex-1 block font-open-sans text-center text-black text-[20px] ${
 						status === card && 'font-bold'
 					}`}
 				>

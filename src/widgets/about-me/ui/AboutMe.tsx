@@ -19,6 +19,10 @@ import { Card7 } from './card-7/Card7'
 export const AboutMe = ({ app }: AppProps) => {
 	const { closeThisApp } = useApp({ app })
 
+	const handleDoubleClickSwiper = (swiper, event) => {
+		// const clickPos =
+	}
+
 	return (
 		<Draggable
 			app={app}
@@ -47,6 +51,8 @@ export const AboutMe = ({ app }: AppProps) => {
 						className='w-[800px] h-[500px]'
 						grabCursor={true}
 						modules={[EffectCards]}
+						slideToClickedSlide
+						onDoubleClick={handleDoubleClickSwiper}
 					>
 						{[Card1, Card2, Card3, Card4, Card5, Card6, Card7].map(
 							(card, i) => (
