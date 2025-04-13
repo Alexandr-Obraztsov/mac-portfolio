@@ -7,20 +7,52 @@ import { Card1 } from './card-1/Card1'
 import { Card2 } from './card-2/Card2'
 import { Card3 } from './card-3/Card3'
 import { Card4 } from './card-4/Card4'
-import { SwiperSlide, Swiper } from 'swiper/react'
-import { EffectCards } from 'swiper/modules'
-
-import 'swiper/css'
-import 'swiper/css/effect-cards'
 import { Card5 } from './card-5/Card5'
 import { Card6 } from './card-6/Card6'
 import { Card7 } from './card-7/Card7'
+import { SwiperSlide, Swiper } from 'swiper/react'
+import { EffectCards } from 'swiper/modules'
+import Arrow from 'public/assets/icons/apps/about-me/little-arrow.svg'
+
+import 'swiper/css'
+import 'swiper/css/effect-cards'
+import SwiperType from 'swiper'
+import { useState } from 'react'
+import { cn } from '@sglara/cn'
 
 export const AboutMe = ({ app }: AppProps) => {
+	const [notificationActive, setNotificationActive] = useState(true)
 	const { closeThisApp } = useApp({ app })
 
-	const handleDoubleClickSwiper = (swiper, event) => {
-		// const clickPos =
+	const handleDoubleClickSwiper = (
+		swiper: SwiperType,
+		event: MouseEvent | TouchEvent | PointerEvent
+	) => {
+		let posX = 0
+		switch (event.type) {
+			case 'mouseup':
+				posX = (event as MouseEvent).clientX
+				break
+			case 'touchend':
+				posX = (event as TouchEvent).touches[0].clientX
+				break
+			case 'pointerup':
+				posX = (event as PointerEvent).clientX
+				break
+			default:
+				break
+		}
+
+		const { width, left } = swiper.el.getBoundingClientRect()
+
+		if (posX < left + width / 2) swiper.slidePrev()
+		else swiper.slideNext()
+	}
+
+	const handleSlide = () => {
+		if (notificationActive) {
+			setNotificationActive(false)
+		}
 	}
 
 	return (
@@ -31,6 +63,7 @@ export const AboutMe = ({ app }: AppProps) => {
 				y: document.body.clientHeight / 2,
 			}}
 			targetId='header'
+			zIndex={app.zIndex}
 		>
 			<div className='rounded-[15px] overflow-hidden bg-about-me-primary flex flex-col'>
 				<div
@@ -53,6 +86,7 @@ export const AboutMe = ({ app }: AppProps) => {
 						modules={[EffectCards]}
 						slideToClickedSlide
 						onDoubleClick={handleDoubleClickSwiper}
+						onSlideChange={handleSlide}
 					>
 						{[Card1, Card2, Card3, Card4, Card5, Card6, Card7].map(
 							(card, i) => (
@@ -63,6 +97,16 @@ export const AboutMe = ({ app }: AppProps) => {
 						)}
 					</Swiper>
 				</div>
+			</div>
+			<div
+				className={cn(
+					'absolute -bottom-4 flex left-0 right-0 flex-row justify-between items-center translate-y-full font-medium text-2xl text-white transition-all duration-animation font-sf-pro',
+					notificationActive ? 'opacity-50' : 'opacity-0'
+				)}
+			>
+				<Arrow />
+				Swipe the card to the side, to view the following information
+				<Arrow className='scale-x-[-1]' />
 			</div>
 		</Draggable>
 	)

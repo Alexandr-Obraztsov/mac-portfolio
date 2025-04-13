@@ -8,7 +8,7 @@ type Props = {
 
 export const Project = ({ name, description, images }: Props) => {
 	return (
-		<div className='group w-full flex flex-col bg-white rounded-lg border border-black cursor-pointer hover:scale-105 transition-all duration-default'>
+		<div className='group w-full flex flex-col bg-white rounded-lg border border-black cursor-pointer hover:scale-105 transition-all duration-default shadow-[0_5px_15px_rgba(0,0,0,0.25)]'>
 			{images.map((image, index) => (
 				<div
 					key={index}

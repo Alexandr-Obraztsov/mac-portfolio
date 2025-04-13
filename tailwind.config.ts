@@ -29,6 +29,7 @@ export default {
 			fontFamily: {
 				bebas: ['var(--font-bebas)', 'sans-serif'],
 				'open-sans': ['var(--font-open-sans)', 'sans-serif'],
+				'sf-pro': ['SF Pro', 'sans-serif'],
 			},
 		},
 		transitionDuration: {

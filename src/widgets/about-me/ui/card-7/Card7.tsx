@@ -10,11 +10,11 @@ const contactInfo = [
 		value: 'obraztsov.official@gmail.com',
 	},
 	{
-		icon: <Telegram className='-translate-x-[1px]' />,
+		icon: <Telegram className='-translate-x-[2px]' />,
 		value: '@obraztsov_alexandr',
 	},
 	{
-		icon: <LinkedIn className='translate-x-[2px] -translate-y-[2px]' />,
+		icon: <LinkedIn className='translate-x-px -translate-y-[2px]' />,
 		value: 'obraztsov-alexandr-047369349',
 	},
 ]

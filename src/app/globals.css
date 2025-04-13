@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: 'SF Pro';
+	src: url('/assets/fonts/SFPRODISPLAYREGULAR.OTF') format('otf');
+	font-style: normal;
+	font-weight: 400;
+}
+@font-face {
+	font-family: 'SF Pro';
+	src: url('/assets/fonts/SFPRODISPLAYBOLD.OTF') format('otf');
+	font-style: bold;
+	font-weight: 700;
+}
+@font-face {
+	font-family: 'SF Pro';
+	src: url('/assets/fonts/SFPRODISPLAYMEDIUM.OTF') format('otf');
+	font-style: medium;
+	font-weight: 500;
+}
+
 :root {
 	--transition-delay: 0.1s;
 	--animation-delay: 0.5s;

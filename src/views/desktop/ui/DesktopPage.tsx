@@ -57,7 +57,7 @@ export const DesktopPage = () => {
 			</div>
 			<div
 				className={cn(
-					'flex flex-col w-full h-screen transition-all duration-animation opacity-0',
+					'flex flex-col w-full h-screen transition-all duration-animation opacity-0 font-sf-pro',
 					!isDesktopVisible && 'blur-sm',
 					isDesktopVisible && 'opacity-100'
 				)}
