@@ -1,3 +1,4 @@
+import { projects } from '@/shared/const/projects'
 import { Card } from '../card/Card'
 import { Project } from './project/Project'
 
@@ -8,23 +9,16 @@ export const Card6 = () => {
 				<h1 className='font-bebas text-[96px] leading-[0.95] text-about-me-accent tracking-tight'>
 					MY WORKS
 				</h1>
-				<Project
-					name='DotNews'
-					description='Personal news aggregator TMA'
-					images={[]}
-				/>
-				<Project
-					name='Security Bot'
-					description='Company channel security bot'
-					images={[]}
-				/>
-				<Project
-					name='Smart Farm'
-					description='Mobile app for controlling IOT devices'
-					images={[]}
-				/>
-				<Project name='Project 1' description='Description 1' images={[]} />
-				<Project name='Project 1' description='Description 1' images={[]} />
+				{Object.values(projects)
+					.slice(0, 5)
+					.map(project => (
+						<Project
+							key={project.title}
+							name={project.title}
+							description={project.shortDescription}
+							images={[]}
+						/>
+					))}
 			</div>
 		</Card>
 	)

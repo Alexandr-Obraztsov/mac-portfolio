@@ -1,5 +1,6 @@
 export type AppProps = {
 	app: App
+	params?: unknown
 }
 
 export type App = {
@@ -7,12 +8,14 @@ export type App = {
 	zIndex: number
 	type: AppTypes
 	isActive: boolean
+	params?: unknown
 }
 
 export enum AppTypes {
 	ABOUT = 'about',
 	SKILLS = 'skills',
 	PROJECTS = 'projects',
+	PROJECT = 'project',
 	CONTACT = 'contact',
 	TRASH = 'trash',
 	MUSIC = 'music',

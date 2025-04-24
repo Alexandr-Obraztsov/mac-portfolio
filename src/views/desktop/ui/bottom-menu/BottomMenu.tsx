@@ -1,7 +1,7 @@
 import { useAppDispatch } from '@/shared/lib'
 import { AppTypes } from '@/shared/model/App.types'
 import { openApp } from '@/shared/model/appsSlice/appsSlice'
-import { socials } from '@/shared/model/socials'
+import { socials } from '@/shared/const/socials'
 import music from 'public/assets/icons/desktop/music.png'
 import { useEffect, useRef } from 'react'
 import { Item } from './Item'

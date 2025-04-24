@@ -8,6 +8,6 @@ export const AppContainer = () => {
 	const apps = useAppSelector(selectApps)
 	return apps.map(app => {
 		const App = Apps[app.type]
-		return <App key={app.id} app={app} />
+		return <App key={app.id} app={app} params={app.params} />
 	})
 }

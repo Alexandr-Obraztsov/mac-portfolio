@@ -1,4 +1,5 @@
+import { BasicApp } from './basic-app/BasicApp'
 import { Draggable } from './draggable/Draggable'
 import { Label } from './label/Label'
 
-export { Draggable, Label }
+export { Draggable, Label, BasicApp }

@@ -28,16 +28,19 @@ export const appsSlice = createSlice({
 		}
 
 		return {
-			openApp: creators.reducer<{ type: AppTypes }>((state, action) => {
-				const id = v1()
-				state.apps.push({
-					id,
-					type: action.payload.type,
-					zIndex: state.apps.length,
-					isActive: true,
-				} as App)
-				setActiveAppById(state, id)
-			}),
+			openApp: creators.reducer<{ type: AppTypes; params?: unknown }>(
+				(state, action) => {
+					const id = v1()
+					state.apps.push({
+						id,
+						type: action.payload.type,
+						zIndex: state.apps.length,
+						params: action.payload.params,
+						isActive: true,
+					} as App)
+					setActiveAppById(state, id)
+				}
+			),
 			closeApp: creators.reducer<{ id: string }>((state, action) => {
 				const index = state.apps.findIndex(app => app.id === action.payload.id)
 				if (index !== -1) state.apps.splice(index, 1)
