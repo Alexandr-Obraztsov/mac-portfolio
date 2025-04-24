@@ -55,10 +55,10 @@ export const AboutMe = ({ app }: AppProps) => {
 
 	return (
 		<BasicApp app={app} title='About me'>
-			<div className='w-[900px] h-[550px] flex justify-center items-center'>
+			<div className='w-[850px] h-[490px] flex justify-center items-center'>
 				<Swiper
 					effect={'cards'}
-					className='w-[800px] h-[500px]'
+					className='w-[800px] h-[500px] scale-90'
 					grabCursor={true}
 					modules={[EffectCards]}
 					slideToClickedSlide

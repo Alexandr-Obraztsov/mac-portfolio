@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 type Props = {
 	children: React.ReactNode
-	startPos: { x: number; y: number }
+	startPos?: { x: number; y: number }
 	zIndex?: number
 	app: App
 	targetId?: string
@@ -18,7 +18,9 @@ export const Draggable = ({
 	targetId,
 }: Props) => {
 	const { setActiveThisApp } = useApp({ app })
-	const [pos, setPos] = useState(startPos)
+	const [pos, setPos] = useState(
+		startPos || { x: window.innerWidth / 2, y: window.innerHeight / 2 }
+	)
 	const [isDragging, setIsDragging] = useState(false)
 	const [offset, setOffset] = useState({ x: 0, y: 0 })
 
