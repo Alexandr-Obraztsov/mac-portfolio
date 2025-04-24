@@ -1,64 +1,105 @@
-.form-container {
-	position: relative;
-	perspective: 1000px;
+.contact-container {
+	width: 100%;
 	height: 100%;
-	width: 100%;
+	display: flex;
+	flex-direction: column;
+	background-color: #212121;
+	color: white;
+	padding: 2rem;
+	font-family: 'SF Pro', sans-serif;
 }
 
-.envelope {
+.contact-header {
+	margin-bottom: 2.5rem;
+}
+
+.contact-title {
+	font-size: 3rem;
+	font-weight: 600;
+	line-height: 1.2;
+	margin-bottom: 0.5rem;
+}
+
+.contact-subtitle {
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #888;
+}
+
+.story-form {
+	display: flex;
+	flex-direction: column;
+	font-size: 1.2rem;
+	line-height: 2;
+}
+
+.input-field {
+	appearance: none;
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid #666;
+	color: white;
+	font-size: 1.2rem;
+	padding: 0.5rem 0;
+	margin: 0 0.5rem;
+	outline: none;
+	min-width: 200px;
+	transition: border-color 0.3s;
+	display: inline-block;
+}
+
+.input-field:focus {
+	border-color: white;
+}
+
+.input-field::placeholder {
+	color: #666;
+	font-style: italic;
+}
+
+.form-row {
+	margin-bottom: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.send-button {
+	display: inline-flex;
+	align-items: center;
+	background: transparent;
+	color: white;
+	border: none;
+	padding: 0.5rem 0;
+	margin-top: 2rem;
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	cursor: pointer;
 	position: relative;
-	width: 100%;
-	background: white;
-	border-radius: 8px;
-	overflow: hidden;
-	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-	transition: all 0.3s;
 }
 
-.envelope-content {
-	padding: 20px;
-	background: white;
+.send-button::before {
+	content: '—';
+	margin-right: 0.5rem;
 }
 
-.envelope:before {
-	content: '';
-	position: absolute;
-	bottom: -20px;
-	right: -20px;
-	width: 200px;
-	height: 200px;
-	background-color: #b8c6e5;
-	opacity: 0.4;
-	border-radius: 50%;
-	z-index: -1;
+.send-button:hover {
+	color: #aaa;
 }
 
-.paper-plane-icon {
-	position: absolute;
-	bottom: 10px;
-	right: 10px;
-	width: 150px;
-	height: 150px;
-	opacity: 0.2;
-	z-index: -1;
-}
-
-.envelope.animating {
-	animation: fly-away 1.5s forwards ease-in-out;
+/* Анимация полета для отправленной формы */
+.story-form.sent {
+	animation: fly-away 1s forwards ease-in-out;
 }
 
 @keyframes fly-away {
 	0% {
-		transform: translateY(0) rotate(0);
-	}
-	20% {
-		transform: translateY(-30px) rotate(5deg);
-	}
-	40% {
-		transform: translateY(-60px) rotate(-5deg);
+		transform: translateY(0) scale(1);
+		opacity: 1;
 	}
 	100% {
-		transform: translateY(-800px) rotate(10deg) scale(0.2);
+		transform: translateY(-50px) scale(0.95);
 		opacity: 0;
 	}
 }
@@ -77,35 +118,11 @@
 	transform: scale(0.8);
 	transition: all 0.5s ease;
 	z-index: -1;
+	color: white;
 }
 
 .success-message.visible {
 	opacity: 1;
 	transform: scale(1);
 	z-index: 10;
-}
-
-.form-inputs {
-	position: relative;
-	z-index: 2;
-}
-
-input,
-textarea {
-	transition: all 0.3s ease;
-}
-
-input:focus,
-textarea:focus {
-	transform: translateY(-2px);
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.send-button {
-	transition: all 0.3s ease;
-}
-
-.send-button:hover:not(:disabled) {
-	transform: translateY(-2px);
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
