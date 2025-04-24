@@ -1,23 +1,21 @@
 import { useApp } from '@/shared/lib/useApp'
 import { App } from '@/shared/model/App.types'
 import { cn } from '@sglara/cn'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 type Props = {
 	children: React.ReactNode
-	startPos?: { x: number; y: number }
 	app: App
 	targetId?: string
 }
 
-export const Draggable = ({ children, startPos, app, targetId }: Props) => {
+export const Draggable = ({ children, app, targetId }: Props) => {
 	const [mounted, setMounted] = useState(false)
 	const { setActiveThisApp } = useApp({ app })
-	const [pos, setPos] = useState(
-		startPos || { x: window.innerWidth / 2, y: window.innerHeight / 2 }
-	)
+	const [pos, setPos] = useState<{ x: number; y: number } | null>(null)
 	const [isDragging, setIsDragging] = useState(false)
 	const [offset, setOffset] = useState({ x: 0, y: 0 })
+	const ref = useRef<HTMLDivElement>(null)
 
 	const onMouseDown = (event: React.MouseEvent<HTMLDivElement>) => {
 		if (targetId) {
@@ -58,14 +56,19 @@ export const Draggable = ({ children, startPos, app, targetId }: Props) => {
 
 	useEffect(() => {
 		setMounted(true)
+		setPos({
+			x: ref.current!.offsetLeft,
+			y: ref.current!.offsetTop,
+		})
 	}, [])
 
 	return (
 		<div
 			onMouseDown={onMouseDown}
+			ref={ref}
 			className={cn(
-				'absolute -translate-x-1/2 -translate-y-1/2 pointer-events-auto transition-all duration-default',
-				!mounted && 'scale-90 opacity-0'
+				'absolute pointer-events-auto transition-[transform,opacity] duration-default',
+				!mounted && 'scale-90 opacity-0 translate-y-[20px]'
 			)}
 			style={{
 				left: pos?.x + 'px',
