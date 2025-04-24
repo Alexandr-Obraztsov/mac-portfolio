@@ -1,5 +1,8 @@
 'use client'
 
+import { useAppDispatch } from '@/shared/lib'
+import { AppTypes } from '@/shared/model/App.types'
+import { openApp } from '@/shared/model/appsSlice/appsSlice'
 import Toggle from 'public/assets/icons/desktop/toggle.svg'
 import { useEffect, useState } from 'react'
 import useMedia from 'use-media'
@@ -15,6 +18,7 @@ function getDate() {
 }
 
 export const Header = () => {
+	const dispatch = useAppDispatch()
 	const [date, setDate] = useState(getDate())
 	const isMobile = useMedia({ maxWidth: '768px' })
 
@@ -26,6 +30,10 @@ export const Header = () => {
 		return () => clearInterval(interval)
 	}, [isMobile])
 
+	const handleClickMenuItem = (appType: AppTypes) => () => {
+		dispatch(openApp({ type: appType }))
+	}
+
 	return (
 		<header className='w-full px-[16px] h-[40px] flex justify-between items-center z-50 font-normal text-[20px] bg-primary'>
 			<nav className='flex-1'>
@@ -33,9 +41,9 @@ export const Header = () => {
 					<li className='whitespace-nowrap !font-semibold tracking-[2px] max-md:hidden pl-[10px]'>
 						Alexandr Obraztsov
 					</li>
-					<li>About</li>
-					<li>Projects</li>
-					<li>Contact</li>
+					<li onClick={handleClickMenuItem(AppTypes.ABOUT)}>About</li>
+					<li onClick={handleClickMenuItem(AppTypes.PROJECTS)}>Projects</li>
+					<li onClick={handleClickMenuItem(AppTypes.CONTACT)}>Contact</li>
 				</ul>
 			</nav>
 			<section className='flex flex-1 gap-[15px] flex-row items-center h-[30px] justify-end'>

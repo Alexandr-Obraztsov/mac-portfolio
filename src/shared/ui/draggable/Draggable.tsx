@@ -5,18 +5,11 @@ import { useEffect, useState } from 'react'
 type Props = {
 	children: React.ReactNode
 	startPos?: { x: number; y: number }
-	zIndex?: number
 	app: App
 	targetId?: string
 }
 
-export const Draggable = ({
-	children,
-	startPos,
-	zIndex,
-	app,
-	targetId,
-}: Props) => {
+export const Draggable = ({ children, startPos, app, targetId }: Props) => {
 	const { setActiveThisApp } = useApp({ app })
 	const [pos, setPos] = useState(
 		startPos || { x: window.innerWidth / 2, y: window.innerHeight / 2 }
@@ -64,11 +57,11 @@ export const Draggable = ({
 	return (
 		<div
 			onMouseDown={onMouseDown}
-			className='absolute -translate-x-1/2 -translate-y-1/2 pointer-events-auto z-[999]'
+			className='absolute -translate-x-1/2 -translate-y-1/2 pointer-events-auto'
 			style={{
 				left: pos?.x + 'px',
 				top: pos?.y + 'px',
-				zIndex,
+				zIndex: app.zIndex,
 			}}
 		>
 			{children}

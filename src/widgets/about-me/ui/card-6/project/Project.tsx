@@ -13,7 +13,7 @@ export const Project = ({ name, description, images }: Props) => {
 	const dispatch = useAppDispatch()
 
 	const onClick = () => {
-		dispatch(openApp({ type: AppTypes.PROJECT, params: name }))
+		dispatch(openApp({ type: AppTypes.PROJECTS, params: name }))
 	}
 
 	return (

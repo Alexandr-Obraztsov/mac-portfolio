@@ -15,7 +15,6 @@ export enum AppTypes {
 	ABOUT = 'about',
 	SKILLS = 'skills',
 	PROJECTS = 'projects',
-	PROJECT = 'project',
 	CONTACT = 'contact',
 	TRASH = 'trash',
 	MUSIC = 'music',
