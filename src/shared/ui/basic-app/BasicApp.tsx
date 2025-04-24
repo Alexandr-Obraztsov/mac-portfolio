@@ -21,20 +21,28 @@ export const BasicApp = ({ app, children, title }: Props) => {
 			targetId='header'
 			zIndex={app.zIndex}
 		>
-			<div className='rounded-[15px] overflow-hidden bg-about-me-primary flex flex-col'>
+			<div className='rounded-xl overflow-hidden bg-white/80 backdrop-blur-md shadow-xl flex flex-col border border-gray-200/30'>
 				<div
 					id='header'
-					className='z-50 relative bg-about-me-secondary p-[8px_10px] w-full'
+					className='z-50 relative bg-[#f1f1f1]/90 h-9 w-full flex items-center px-3'
 				>
-					<button
-						className='absolute left-[10px] size-[20px] bg-[#E2554E] rounded-full'
-						onClick={closeThisApp}
-					></button>
-					<h1 className='text-[20px] leading-[20px] text-black w-full text-center'>
+					<div className='flex items-center space-x-2 absolute left-3'>
+						<button
+							className='size-3 bg-[#FF605C] rounded-full hover:opacity-90 flex items-center justify-center group'
+							onClick={closeThisApp}
+						>
+							<span className='opacity-0 group-hover:opacity-100 text-[8px] text-[#A04542]'>
+								✕
+							</span>
+						</button>
+						<div className='size-3 bg-[#FFBD44] rounded-full'></div>
+						<div className='size-3 bg-[#00CA4E] rounded-full'></div>
+					</div>
+					<h1 className='text-sm font-medium text-gray-700 w-full text-center font-sf-pro'>
 						{title}
 					</h1>
 				</div>
-				{children}
+				<div className='flex-1'>{children}</div>
 			</div>
 		</Draggable>
 	)
