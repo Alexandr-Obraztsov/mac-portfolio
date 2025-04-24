@@ -39,16 +39,18 @@ export const ContactMe = ({ app }: AppProps) => {
 
 	return (
 		<BasicApp app={app} title='Contact me'>
-			<div className='p-6 w-[400px] bg-about-me-primary text-text'>
+			<div className='p-8 w-[400px] bg-about-me-primary'>
 				{isSuccess ? (
 					<div className='flex flex-col items-center justify-center h-[300px]'>
 						<div className='text-2xl font-bebas mb-2'>Спасибо!</div>
-						<p className='text-center'>Ваше сообщение успешно отправлено.</p>
+						<p className='text-center text-text'>
+							Ваше сообщение успешно отправлено.
+						</p>
 					</div>
 				) : (
-					<form onSubmit={handleSubmit} className='flex flex-col gap-4'>
-						<div className='flex flex-col gap-1'>
-							<label htmlFor='name' className='text-sm font-medium'>
+					<form onSubmit={handleSubmit} className='flex flex-col gap-6'>
+						<div className='flex flex-col'>
+							<label htmlFor='name' className='text-sm text-[#8E9CB2] mb-2'>
 								Имя
 							</label>
 							<input
@@ -58,12 +60,12 @@ export const ContactMe = ({ app }: AppProps) => {
 								value={formData.name}
 								onChange={handleChange}
 								required
-								className='p-2 rounded-md bg-about-me-secondary text-text border border-about-me-accent focus:outline-none focus:ring-1 focus:ring-about-me-accent'
+								className='p-3 rounded-md bg-white text-black border border-[#DFE1E6] focus:outline-none focus:border-[#5E72E4]'
 							/>
 						</div>
 
-						<div className='flex flex-col gap-1'>
-							<label htmlFor='email' className='text-sm font-medium'>
+						<div className='flex flex-col'>
+							<label htmlFor='email' className='text-sm text-[#8E9CB2] mb-2'>
 								Email
 							</label>
 							<input
@@ -73,12 +75,12 @@ export const ContactMe = ({ app }: AppProps) => {
 								value={formData.email}
 								onChange={handleChange}
 								required
-								className='p-2 rounded-md bg-about-me-secondary text-text border border-about-me-accent focus:outline-none focus:ring-1 focus:ring-about-me-accent'
+								className='p-3 rounded-md bg-white text-black border border-[#DFE1E6] focus:outline-none focus:border-[#5E72E4]'
 							/>
 						</div>
 
-						<div className='flex flex-col gap-1'>
-							<label htmlFor='message' className='text-sm font-medium'>
+						<div className='flex flex-col'>
+							<label htmlFor='message' className='text-sm text-[#8E9CB2] mb-2'>
 								Сообщение
 							</label>
 							<textarea
@@ -88,14 +90,14 @@ export const ContactMe = ({ app }: AppProps) => {
 								onChange={handleChange}
 								required
 								rows={4}
-								className='p-2 rounded-md bg-about-me-secondary text-text border border-about-me-accent focus:outline-none focus:ring-1 focus:ring-about-me-accent resize-none'
+								className='p-3 rounded-md bg-white text-black border border-[#DFE1E6] focus:outline-none focus:border-[#5E72E4] resize-none'
 							/>
 						</div>
 
 						<button
 							type='submit'
 							disabled={isSubmitting}
-							className='mt-2 py-2 px-4 bg-about-me-accent text-white rounded-md hover:opacity-90 transition-opacity disabled:opacity-70 disabled:cursor-not-allowed font-medium'
+							className='mt-2 py-3 px-4 bg-[#1A0A36] text-white rounded-md hover:bg-opacity-90 transition-opacity disabled:opacity-70 disabled:cursor-not-allowed font-medium'
 						>
 							{isSubmitting ? 'Отправка...' : 'Отправить'}
 						</button>
