@@ -1,12 +1,16 @@
-import { useAppDispatch } from '@/shared/lib'
+import { useAppDispatch, useAppSelector } from '@/shared/lib'
 import { AppTypes } from '@/shared/model/App.types'
-import { openApp } from '@/shared/model/appsSlice/appsSlice'
+import { openApp, selectApps } from '@/shared/model/appsSlice/appsSlice'
 import { socials } from '@/shared/const/socials'
 import music from 'public/assets/icons/desktop/music.png'
 import { useEffect, useRef } from 'react'
 import { Item } from './Item'
+import { Apps } from '@/shared/model/Apps'
+import { cn } from '@sglara/cn'
+
 export const BottomMenu = () => {
 	const dispatch = useAppDispatch()
+	const apps = useAppSelector(selectApps)
 
 	const ref = useRef<HTMLUListElement>(null)
 
@@ -55,7 +59,7 @@ export const BottomMenu = () => {
 			menu.removeEventListener('mousemove', handleMove)
 			menu.removeEventListener('mouseleave', handleLeave)
 		}
-	}, [])
+	}, [apps])
 
 	return (
 		<ul
@@ -72,9 +76,26 @@ export const BottomMenu = () => {
 					onClick: () => handleClickApp(AppTypes.MUSIC),
 				}}
 			/>
-			<div className='w-[1.5px] shadow-[0_0_2px_white_inset] h-[calc(var(--menu-icon-size)-20px)] m-[10px_5px]'></div>
+			<span className='w-[1.5px] shadow-[0_0_2px_white_inset] h-[calc(var(--menu-icon-size)-20px)] m-[10px_5px]'></span>
 			{Object.values(socials).map(item => (
 				<Item key={item.title} item={item} />
+			))}
+			<span
+				className={cn(
+					'w-[1.5px] shadow-[0_0_2px_white_inset] h-[calc(var(--menu-icon-size)-20px)] m-[10px_5px]',
+					apps.length === 0 && 'hidden'
+				)}
+			></span>
+			{apps.map(item => (
+				<Item
+					key={item.id}
+					item={{
+						img: Apps[item.type].icon,
+						title: item.type.charAt(0).toUpperCase() + item.type.slice(1),
+						onClick: () => handleClickApp(item.type),
+					}}
+					activity={item.isActive ? 'active' : 'inactive'}
+				/>
 			))}
 		</ul>
 	)

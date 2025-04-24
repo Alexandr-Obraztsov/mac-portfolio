@@ -1,5 +1,6 @@
 import { useApp } from '@/shared/lib/useApp'
 import { App } from '@/shared/model/App.types'
+import { cn } from '@sglara/cn'
 import { useEffect, useState } from 'react'
 
 type Props = {
@@ -10,6 +11,7 @@ type Props = {
 }
 
 export const Draggable = ({ children, startPos, app, targetId }: Props) => {
+	const [mounted, setMounted] = useState(false)
 	const { setActiveThisApp } = useApp({ app })
 	const [pos, setPos] = useState(
 		startPos || { x: window.innerWidth / 2, y: window.innerHeight / 2 }
@@ -54,10 +56,17 @@ export const Draggable = ({ children, startPos, app, targetId }: Props) => {
 		}
 	}, [offset, isDragging])
 
+	useEffect(() => {
+		setMounted(true)
+	}, [])
+
 	return (
 		<div
 			onMouseDown={onMouseDown}
-			className='absolute -translate-x-1/2 -translate-y-1/2 pointer-events-auto'
+			className={cn(
+				'absolute -translate-x-1/2 -translate-y-1/2 pointer-events-auto transition-all duration-default',
+				!mounted && 'scale-90 opacity-0'
+			)}
 			style={{
 				left: pos?.x + 'px',
 				top: pos?.y + 'px',

@@ -12,15 +12,7 @@ export const BasicApp = ({ app, children, title }: Props) => {
 	const { closeThisApp } = useApp({ app })
 
 	return (
-		<Draggable
-			app={app}
-			startPos={{
-				x: document.body.clientWidth / 2,
-				y: document.body.clientHeight / 2,
-			}}
-			targetId='header'
-			zIndex={app.zIndex}
-		>
+		<Draggable app={app} targetId='header'>
 			<div className='rounded-xl overflow-hidden bg-white/80 backdrop-blur-md shadow-xl flex flex-col border border-gray-200/30'>
 				<div
 					id='header'

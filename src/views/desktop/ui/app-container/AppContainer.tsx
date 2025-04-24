@@ -9,7 +9,7 @@ export const AppContainer = () => {
 	return (
 		<div className='z-[999]'>
 			{apps.map(app => {
-				const App = Apps[app.type]
+				const App = Apps[app.type].component
 				return <App key={app.id} app={app} params={app.params} />
 			})}
 		</div>

@@ -30,6 +30,12 @@ export const appsSlice = createSlice({
 		return {
 			openApp: creators.reducer<{ type: AppTypes; params?: unknown }>(
 				(state, action) => {
+					for (const app of state.apps) {
+						if (app.type === action.payload.type) {
+							setActiveAppById(state, app.id)
+							return
+						}
+					}
 					const id = v1()
 					state.apps.push({
 						id,

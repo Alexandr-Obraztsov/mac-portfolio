@@ -1,18 +1,47 @@
 import { AboutMe } from '@/widgets/about-me'
 import { HiLetter } from '@/widgets/hi-letter'
 import { Music } from '@/widgets/music'
-import { JSX } from 'react'
+import { FC } from 'react'
 import { AppProps, AppTypes } from './App.types'
 import { ContactMe } from '@/widgets/contact-me'
 import { Projects } from '@/widgets/projects'
 import { Trash } from '@/widgets/trash'
+import AboutMeIcon from 'public/assets/icons/desktop/about.png'
+import ProjectsIcon from 'public/assets/icons/desktop/folder.png'
+import ContactIcon from 'public/assets/icons/desktop/letter.png'
+import TrashIcon from 'public/assets/icons/desktop/trash.png'
+import MusicIcon from 'public/assets/icons/desktop/music.png'
+import HiLetterIcon from 'public/assets/icons/desktop/dino.png'
+import { StaticImageData } from 'next/image'
 
-export const Apps: Record<AppTypes, (props: AppProps) => JSX.Element> = {
-	[AppTypes.ABOUT]: AboutMe,
-	[AppTypes.SKILLS]: HiLetter,
-	[AppTypes.PROJECTS]: Projects,
-	[AppTypes.CONTACT]: ContactMe,
-	[AppTypes.TRASH]: Trash,
-	[AppTypes.MUSIC]: Music,
-	[AppTypes.HI]: HiLetter,
+type AppType = {
+	icon: StaticImageData
+	component: FC<AppProps>
+}
+
+export const Apps: Record<AppTypes, AppType> = {
+	[AppTypes.ABOUT]: {
+		icon: AboutMeIcon,
+		component: AboutMe,
+	},
+	[AppTypes.PROJECTS]: {
+		icon: ProjectsIcon,
+		component: Projects,
+	},
+	[AppTypes.CONTACT]: {
+		icon: ContactIcon,
+		component: ContactMe,
+	},
+	[AppTypes.TRASH]: {
+		icon: TrashIcon,
+		component: Trash,
+	},
+	[AppTypes.MUSIC]: {
+		icon: MusicIcon,
+		component: Music,
+	},
+	[AppTypes.HI]: {
+		icon: HiLetterIcon,
+		component: HiLetter,
+	},
 }

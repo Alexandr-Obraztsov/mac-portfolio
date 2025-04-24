@@ -1,36 +1,23 @@
 import { AppProps } from '@/shared/model/App.types'
 import { BasicApp } from '@/shared/ui'
 import { useState } from 'react'
-
 import Image from 'next/image'
 import { trashImages } from '@/shared/const/trashImages'
+import BackIcon from 'public/assets/icons/shared/back.svg'
 
 export const Trash = ({ app }: AppProps) => {
 	const [selectedImage, setSelectedImage] = useState<number | null>(null)
 
 	return (
 		<BasicApp app={app} title='Trash'>
-			<div className='p-6 overflow-y-auto w-[500px]'>
+			<div className='p-6 overflow-y-auto w-[500px] h-[600px]'>
 				{selectedImage !== null ? (
 					<div className='space-y-4'>
 						<button
 							onClick={() => setSelectedImage(null)}
 							className='px-3 py-1 bg-gray-200 rounded-md text-gray-700 text-sm flex items-center'
 						>
-							<svg
-								className='w-4 h-4 mr-1'
-								fill='none'
-								stroke='currentColor'
-								viewBox='0 0 24 24'
-								xmlns='http://www.w3.org/2000/svg'
-							>
-								<path
-									strokeLinecap='round'
-									strokeLinejoin='round'
-									strokeWidth={2}
-									d='M15 19l-7-7 7-7'
-								/>
-							</svg>
+							<BackIcon className='w-4 h-4 mr-1' />
 							Back
 						</button>
 
@@ -38,7 +25,7 @@ export const Trash = ({ app }: AppProps) => {
 							<Image
 								src={trashImages[selectedImage].src}
 								alt={trashImages[selectedImage].alt}
-								className='object-cover'
+								className='object-cover h-[390px]'
 							/>
 
 							<div className='p-4'>

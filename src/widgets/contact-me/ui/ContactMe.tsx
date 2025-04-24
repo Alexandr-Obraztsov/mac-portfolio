@@ -3,6 +3,8 @@ import { Draggable } from '@/shared/ui'
 import { useState, useRef } from 'react'
 import { useApp } from '@/shared/lib'
 import { cn } from '@sglara/cn'
+import CloseIcon from 'public/assets/icons/shared/close.svg'
+import ArrowRightIcon from 'public/assets/icons/shared/arrow-right.svg'
 
 export const ContactMe = ({ app }: AppProps) => {
 	const { closeThisApp } = useApp({ app })
@@ -58,21 +60,7 @@ export const ContactMe = ({ app }: AppProps) => {
 							onClick={closeThisApp}
 							className='text-gray-400 hover:text-gray-600'
 						>
-							<svg
-								width='24'
-								height='24'
-								viewBox='0 0 24 24'
-								fill='none'
-								xmlns='http://www.w3.org/2000/svg'
-							>
-								<path
-									d='M18 6L6 18M6 6L18 18'
-									stroke='currentColor'
-									strokeWidth='2'
-									strokeLinecap='round'
-									strokeLinejoin='round'
-								/>
-							</svg>
+							<CloseIcon className='w-6 h-6' />
 						</button>
 					</div>
 
@@ -146,43 +134,13 @@ export const ContactMe = ({ app }: AppProps) => {
 								className='h-10 px-6 bg-indigo-600 text-white text-base rounded-full flex items-center justify-center hover:bg-indigo-700 transition-colors font-medium mt-2 font-sans'
 							>
 								{isSubmitting ? (
-									<svg
-										className='animate-spin h-5 w-5 text-white'
-										xmlns='http://www.w3.org/2000/svg'
-										fill='none'
-										viewBox='0 0 24 24'
-									>
-										<circle
-											className='opacity-25'
-											cx='12'
-											cy='12'
-											r='10'
-											stroke='currentColor'
-											strokeWidth='4'
-										></circle>
-										<path
-											className='opacity-75'
-											fill='currentColor'
-											d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'
-										></path>
-									</svg>
+									<div className='flex items-center'>
+										<span className='inline-block w-5 h-5 border-[3px] border-white border-t-white/50 rounded-full animate-spin'></span>
+									</div>
 								) : (
 									<>
 										SEND
-										<svg
-											className='ml-1 size-4'
-											viewBox='0 0 24 24'
-											fill='none'
-											xmlns='http://www.w3.org/2000/svg'
-										>
-											<path
-												d='M5 12H19M19 12L12 5M19 12L12 19'
-												stroke='currentColor'
-												strokeWidth='2'
-												strokeLinecap='round'
-												strokeLinejoin='round'
-											/>
-										</svg>
+										<ArrowRightIcon className='ml-1 size-4' />
 									</>
 								)}
 							</button>
@@ -202,21 +160,7 @@ export const ContactMe = ({ app }: AppProps) => {
 							onClick={handleThankYouClose}
 							className='text-white/70 hover:text-white'
 						>
-							<svg
-								width='24'
-								height='24'
-								viewBox='0 0 24 24'
-								fill='none'
-								xmlns='http://www.w3.org/2000/svg'
-							>
-								<path
-									d='M18 6L6 18M6 6L18 18'
-									stroke='currentColor'
-									strokeWidth='2'
-									strokeLinecap='round'
-									strokeLinejoin='round'
-								/>
-							</svg>
+							<CloseIcon className='w-6 h-6' />
 						</button>
 					</div>
 
@@ -242,20 +186,7 @@ export const ContactMe = ({ app }: AppProps) => {
 							onClick={handleThankYouClose}
 						>
 							NEXT
-							<svg
-								className='ml-1 size-4'
-								viewBox='0 0 24 24'
-								fill='none'
-								xmlns='http://www.w3.org/2000/svg'
-							>
-								<path
-									d='M5 12H19M19 12L12 5M19 12L12 19'
-									stroke='currentColor'
-									strokeWidth='2'
-									strokeLinecap='round'
-									strokeLinejoin='round'
-								/>
-							</svg>
+							<ArrowRightIcon className='ml-1 size-4' />
 						</button>
 					</div>
 				</div>

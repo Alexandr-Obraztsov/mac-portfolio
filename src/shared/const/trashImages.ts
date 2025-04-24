@@ -5,13 +5,6 @@ import Coding from 'public/assets/images/trash/coding.jpg'
 
 export const trashImages = [
 	{
-		src: Gym,
-		alt: 'Gym',
-		title: 'Gym',
-		description:
-			'Perhaps this is the best place where I can forget about all the problems and just be in my world.',
-	},
-	{
 		src: Startup,
 		alt: 'Startup',
 		title: 'First startup',
@@ -29,5 +22,12 @@ export const trashImages = [
 		alt: 'My codebase',
 		title: 'My codebase',
 		description: 'I love coding. It is the best place where I can be myself.',
+	},
+	{
+		src: Gym,
+		alt: 'Gym',
+		title: 'Gym',
+		description:
+			'Perhaps this is the best place where I can forget about all the problems and just be in my world.',
 	},
 ]
