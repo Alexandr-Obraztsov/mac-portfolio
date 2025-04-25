@@ -5,6 +5,7 @@ import { useApp } from '@/shared/lib'
 import { cn } from '@sglara/cn'
 import CloseIcon from 'public/assets/icons/shared/close.svg'
 import ArrowRightIcon from 'public/assets/icons/shared/arrow-right.svg'
+import { sendContactForm } from '../api'
 
 export const ContactMe = ({ app }: AppProps) => {
 	const { closeThisApp } = useApp({ app })
@@ -42,20 +43,7 @@ export const ContactMe = ({ app }: AppProps) => {
 		setIsSubmitting(true)
 
 		try {
-			const response = await fetch('/api/contact', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(formData),
-			})
-
-			const data = await response.json()
-
-			if (!response.ok) {
-				throw new Error(data.message || 'Ошибка при отправке сообщения')
-			}
-
+			await sendContactForm(formData)
 			setIsSubmitting(false)
 			setIsSuccess(true)
 		} catch (error) {

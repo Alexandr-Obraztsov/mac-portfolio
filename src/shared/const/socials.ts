@@ -4,17 +4,17 @@ import telegram from 'public/assets/icons/desktop/telegram.png'
 
 export const socials = {
 	telegram: {
-		link: process.env.TELEGRAM,
+		link: process.env.NEXT_PUBLIC_TELEGRAM,
 		title: 'Telegram',
 		img: telegram,
 	},
 	github: {
-		link: process.env.GITHUB,
+		link: process.env.NEXT_PUBLIC_GITHUB,
 		title: 'GitHub',
 		img: github,
 	},
 	linkedin: {
-		link: process.env.LINKEDIN,
+		link: process.env.NEXT_PUBLIC_LINKEDIN,
 		title: 'LinkedIn',
 		img: linkedin,
 	},

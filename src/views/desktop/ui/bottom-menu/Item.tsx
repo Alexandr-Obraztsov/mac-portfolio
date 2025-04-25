@@ -20,11 +20,13 @@ export const Item = ({ item, activity }: Props) => {
 			key={item.title}
 			className={cn(
 				'size-[var(--menu-icon-size)] z-1 transition-all duration-default ease-out',
-				!mounted && 'size-[0]'
+				!mounted && 'size-0'
 			)}
 		>
 			<a
 				href={item.link}
+				target={item.link ? '_blank' : undefined}
+				rel={item.link ? 'noopener noreferrer' : undefined}
 				onClick={item.onClick}
 				className='relative block group'
 			>
