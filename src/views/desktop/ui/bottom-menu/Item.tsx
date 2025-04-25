@@ -1,6 +1,6 @@
+import { useMounted } from '@/shared/lib/useMounted'
 import { cn } from '@sglara/cn'
 import Image, { StaticImageData } from 'next/image'
-import { useEffect, useState } from 'react'
 
 type Props = {
 	item: {
@@ -13,18 +13,14 @@ type Props = {
 }
 
 export const Item = ({ item, activity }: Props) => {
-	const [built, setBuilt] = useState(false)
-
-	useEffect(() => {
-		setBuilt(true)
-	}, [])
+	const mounted = useMounted()
 
 	return (
 		<li
 			key={item.title}
 			className={cn(
 				'size-[var(--menu-icon-size)] z-1 transition-all duration-default ease-out',
-				!built && 'size-[0]'
+				!mounted && 'size-[0]'
 			)}
 		>
 			<a

@@ -18,6 +18,7 @@ export const ContactMe = ({ app }: AppProps) => {
 
 	const [isSubmitting, setIsSubmitting] = useState(false)
 	const [isSuccess, setIsSuccess] = useState(false)
+	const [error, setError] = useState<string | null>(null)
 	const formRef = useRef<HTMLFormElement>(null)
 
 	const handleChange = (
@@ -29,16 +30,41 @@ export const ContactMe = ({ app }: AppProps) => {
 		setFormData(prev => ({ ...prev, [name]: value }))
 	}
 
-	const handleSubmit = (e: React.FormEvent) => {
+	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault()
-		if (!formData.name || !formData.email) return
+		setError(null)
+
+		if (!formData.name || !formData.email || !formData.message) {
+			setError('Пожалуйста, заполните все обязательные поля')
+			return
+		}
 
 		setIsSubmitting(true)
 
-		setTimeout(() => {
+		try {
+			const response = await fetch('/api/contact', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(formData),
+			})
+
+			const data = await response.json()
+
+			if (!response.ok) {
+				throw new Error(data.message || 'Ошибка при отправке сообщения')
+			}
+
 			setIsSubmitting(false)
 			setIsSuccess(true)
-		}, 2000)
+		} catch (error) {
+			setIsSubmitting(false)
+			setError(
+				error instanceof Error ? error.message : 'Произошла ошибка при отправке'
+			)
+			console.error('Ошибка отправки формы:', error)
+		}
 	}
 
 	const handleThankYouClose = () => {
@@ -69,6 +95,11 @@ export const ContactMe = ({ app }: AppProps) => {
 						onSubmit={handleSubmit}
 						className='flex gap-5 flex-col p-6 pt-3'
 					>
+						{error && (
+							<div className='p-3 bg-red-50 text-red-700 rounded-md text-sm'>
+								{error}
+							</div>
+						)}
 						<div className='border-b border-gray-200'>
 							<label className='text-sm text-gray-500 block mb-2'>Name</label>
 							<input
@@ -124,6 +155,7 @@ export const ContactMe = ({ app }: AppProps) => {
 								placeholder='Your message...'
 								rows={4}
 								disabled={isSubmitting}
+								required
 							/>
 						</div>
 
@@ -174,7 +206,7 @@ export const ContactMe = ({ app }: AppProps) => {
 
 					<div className='border-t border-white/20 pt-6 pb-4'>
 						<p className='text-center text-xl'>
-							We'll be in touch.
+							We&apos;ll be in touch.
 							<br />
 							Shortly!
 						</p>

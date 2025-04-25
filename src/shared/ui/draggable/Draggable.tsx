@@ -1,4 +1,5 @@
 import { useApp } from '@/shared/lib/useApp'
+import { useMounted } from '@/shared/lib/useMounted'
 import { App } from '@/shared/model/App.types'
 import { cn } from '@sglara/cn'
 import { useEffect, useRef, useState } from 'react'
@@ -10,7 +11,7 @@ type Props = {
 }
 
 export const Draggable = ({ children, app, targetId }: Props) => {
-	const [mounted, setMounted] = useState(false)
+	const mounted = useMounted()
 	const { setActiveThisApp } = useApp({ app })
 	const [pos, setPos] = useState<{ x: number; y: number } | null>(null)
 	const [isDragging, setIsDragging] = useState(false)
@@ -55,7 +56,6 @@ export const Draggable = ({ children, app, targetId }: Props) => {
 	}, [offset, isDragging])
 
 	useEffect(() => {
-		setMounted(true)
 		setPos({
 			x: ref.current!.offsetLeft,
 			y: ref.current!.offsetTop,
