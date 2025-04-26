@@ -1,7 +1,7 @@
 import { StaticImageData } from 'next/image'
-import hitTheRoadJack from 'public/assets/images/hit-the-road.png'
-import onlyYou from 'public/assets/images/only-you.png'
-import sigmaBoy from 'public/assets/images/sigma-boy.png'
+import hitTheRoadJack from 'public/media/images/hit-the-road.png'
+import onlyYou from 'public/media/images/only-you.png'
+import sigmaBoy from 'public/media/images/sigma-boy.png'
 
 export type Sound = {
 	title: string
@@ -13,16 +13,16 @@ export const sounds: Sound[] = [
 	{
 		title: 'Only You',
 		img: onlyYou,
-		src: '/assets/sounds/only-you.mp3',
+		src: '/media/sounds/only-you.mp3',
 	},
 	{
 		title: 'Hit the road Jack',
 		img: hitTheRoadJack,
-		src: '/assets/sounds/hit-the-road.mp3',
+		src: '/media/sounds/hit-the-road.mp3',
 	},
 	{
 		title: 'Sigma Boy',
 		img: sigmaBoy,
-		src: '/assets/sounds/sigma-boy.mp3',
+		src: '/media/sounds/sigma-boy.mp3',
 	},
 ]

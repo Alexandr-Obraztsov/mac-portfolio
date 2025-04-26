@@ -3,7 +3,7 @@ import { ProjectHeader } from './ProjectHeader'
 import { ProjectDescription } from './ProjectDescription'
 import { TechnologiesList } from './TechnologiesList'
 import { ProjectLinks } from './ProjectLinks'
-import BackIcon from 'public/assets/icons/shared/back.svg'
+import BackIcon from 'public/media/icons/shared/back.svg'
 
 interface ProjectDetailsProps {
 	projectId: string

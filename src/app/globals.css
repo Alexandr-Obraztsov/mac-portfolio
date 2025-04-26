@@ -4,19 +4,19 @@
 
 @font-face {
 	font-family: 'SF Pro';
-	src: url('/assets/fonts/SFPRODISPLAYREGULAR.OTF') format('otf');
+	src: url('/media/fonts/SFPRODISPLAYREGULAR.OTF') format('otf');
 	font-style: normal;
 	font-weight: 400;
 }
 @font-face {
 	font-family: 'SF Pro';
-	src: url('/assets/fonts/SFPRODISPLAYBOLD.OTF') format('otf');
+	src: url('/media/fonts/SFPRODISPLAYBOLD.OTF') format('otf');
 	font-style: bold;
 	font-weight: 700;
 }
 @font-face {
 	font-family: 'SF Pro';
-	src: url('/assets/fonts/SFPRODISPLAYMEDIUM.OTF') format('otf');
+	src: url('/media/fonts/SFPRODISPLAYMEDIUM.OTF') format('otf');
 	font-style: medium;
 	font-weight: 500;
 }
@@ -40,7 +40,7 @@
 	}
 
 	/* Тема */
-	--wallpaper: url(/assets/wallpapers/light.jpg);
+	--wallpaper: url(/media/wallpapers/light.jpg);
 
 	--system-primary: rgba(100, 39, 99, 0.58);
 	--system-secondary: rgba(255, 255, 255, 0.5);
@@ -66,7 +66,7 @@
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--wallpaper: url(/assets/wallpapers/night.jpg);
+		--wallpaper: url(/media/wallpapers/night.jpg);
 
 		--system-primary: rgba(181, 181, 185, 0.17);
 		--system-secondary: rgba(181, 181, 185, 0.38);

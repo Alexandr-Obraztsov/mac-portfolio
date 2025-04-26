@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import card2 from 'public/assets/images/about/card2.png'
+import card2 from 'public/media/images/about/card2.png'
 import { Card } from '../card/Card'
 export const Card2 = () => {
 	return (

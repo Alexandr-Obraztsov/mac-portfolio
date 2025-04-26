@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Card } from '../card/Card'
-import image from 'public/assets/images/about/card3.png'
+import image from 'public/media/images/about/card3.png'
 
 export const Card3 = () => {
 	return (

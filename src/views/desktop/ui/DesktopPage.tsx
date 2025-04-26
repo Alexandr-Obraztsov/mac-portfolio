@@ -6,7 +6,7 @@ import { Desktop } from './desktop/Desktop'
 import { Header } from './header/Header'
 import { cn } from '@sglara/cn'
 import { LottieRefCurrentProps } from 'lottie-react'
-import HelloWhite from 'public/assets/animations/hello-white.json'
+import HelloWhite from 'public/media/animations/hello-white.json'
 import dynamic from 'next/dynamic'
 
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false })

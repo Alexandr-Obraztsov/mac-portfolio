@@ -1,7 +1,7 @@
-import Gym from 'public/assets/images/trash/gym.jpg'
-import Startup from 'public/assets/images/trash/startup.jpg'
-import Nature from 'public/assets/images/trash/nature.jpg'
-import Coding from 'public/assets/images/trash/coding.jpg'
+import Gym from 'public/media/images/trash/gym.jpg'
+import Startup from 'public/media/images/trash/startup.jpg'
+import Nature from 'public/media/images/trash/nature.jpg'
+import Coding from 'public/media/images/trash/coding.jpg'
 
 export const trashImages = [
 	{

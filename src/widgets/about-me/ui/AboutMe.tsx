@@ -11,7 +11,7 @@ import { Card6 } from './card-6/Card6'
 import { Card7 } from './card-7/Card7'
 import { SwiperSlide, Swiper } from 'swiper/react'
 import { EffectCards } from 'swiper/modules'
-import Arrow from 'public/assets/icons/apps/about-me/little-arrow.svg'
+import Arrow from 'public/media/icons/apps/about-me/little-arrow.svg'
 
 import 'swiper/css'
 import 'swiper/css/effect-cards'

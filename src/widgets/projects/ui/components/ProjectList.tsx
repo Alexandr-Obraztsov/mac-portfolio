@@ -1,5 +1,5 @@
 import { ProjectCard, ProjectHeight } from '../ProjectCard'
-import BgLine from 'public/assets/images/projects/bg-line.svg'
+import BgLine from 'public/media/images/projects/bg-line.svg'
 import { projects } from '@/shared/const/projects'
 
 interface ProjectListProps {

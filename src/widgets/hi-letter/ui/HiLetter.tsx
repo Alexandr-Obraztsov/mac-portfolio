@@ -1,7 +1,7 @@
 import { useApp } from '@/shared/lib'
 import { AppProps } from '@/shared/model/App.types'
 import Image from 'next/image'
-import hiImg from 'public/assets/images/hi-letter.png'
+import hiImg from 'public/media/images/hi-letter.png'
 export const HiLetter = ({ app }: AppProps) => {
 	const { closeThisApp } = useApp({ app })
 

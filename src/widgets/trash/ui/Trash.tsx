@@ -3,7 +3,7 @@ import { BasicApp } from '@/shared/ui'
 import { useState } from 'react'
 import Image from 'next/image'
 import { trashImages } from '@/shared/const/trashImages'
-import BackIcon from 'public/assets/icons/shared/back.svg'
+import BackIcon from 'public/media/icons/shared/back.svg'
 
 export const Trash = ({ app }: AppProps) => {
 	const [selectedImage, setSelectedImage] = useState<number | null>(null)

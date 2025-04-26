@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { Card } from '../card/Card'
 import { Skill } from './Skill/Skill'
-import LooperImage from 'public/assets/images/about/card4.png'
+import LooperImage from 'public/media/images/about/card4.png'
 export const Card4 = () => {
 	return (
 		<Card status='Skills'>

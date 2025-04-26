@@ -2,31 +2,32 @@
 
 import { useEffect, useState } from 'react'
 
-import lightWallpaper from 'public/assets/wallpapers/light.jpg'
-import nightWallpaper from 'public/assets/wallpapers/night.jpg'
+// Импорт всех изображений из wallpapers
+import lightWallpaper from 'public/media/wallpapers/light.jpg'
+import nightWallpaper from 'public/media/wallpapers/night.jpg'
 
 // Импорт изображений из /assets/images
-import hiImg from 'public/assets/images/hi-letter.png'
-import hitTheRoadJack from 'public/assets/images/hit-the-road.png'
-import onlyYou from 'public/assets/images/only-you.png'
-import sigmaBoy from 'public/assets/images/sigma-boy.png'
+import hiImg from 'public/media/images/hi-letter.png'
+import hitTheRoadJack from 'public/media/images/hit-the-road.png'
+import onlyYou from 'public/media/images/only-you.png'
+import sigmaBoy from 'public/media/images/sigma-boy.png'
 
 // Импорт изображений из trash
-import Gym from 'public/assets/images/trash/gym.jpg'
-import Startup from 'public/assets/images/trash/startup.jpg'
-import Nature from 'public/assets/images/trash/nature.jpg'
-import Coding from 'public/assets/images/trash/coding.jpg'
+import Gym from 'public/media/images/trash/gym.jpg'
+import Startup from 'public/media/images/trash/startup.jpg'
+import Nature from 'public/media/images/trash/nature.jpg'
+import Coding from 'public/media/images/trash/coding.jpg'
 
 // Импорт иконок
-import AboutMeIcon from 'public/assets/icons/desktop/about.png'
-import ProjectsIcon from 'public/assets/icons/desktop/folder.png'
-import ContactIcon from 'public/assets/icons/desktop/letter.png'
-import TrashIcon from 'public/assets/icons/desktop/trash.png'
-import MusicIcon from 'public/assets/icons/desktop/music.png'
-import HiLetterIcon from 'public/assets/icons/desktop/dino.png'
-import github from 'public/assets/icons/desktop/github.png'
-import linkedin from 'public/assets/icons/desktop/linkedin.png'
-import telegram from 'public/assets/icons/desktop/telegram.png'
+import AboutMeIcon from 'public/media/icons/desktop/about.png'
+import ProjectsIcon from 'public/media/icons/desktop/folder.png'
+import ContactIcon from 'public/media/icons/desktop/letter.png'
+import TrashIcon from 'public/media/icons/desktop/trash.png'
+import MusicIcon from 'public/media/icons/desktop/music.png'
+import HiLetterIcon from 'public/media/icons/desktop/dino.png'
+import github from 'public/media/icons/desktop/github.png'
+import linkedin from 'public/media/icons/desktop/linkedin.png'
+import telegram from 'public/media/icons/desktop/telegram.png'
 
 // Импорт анимаций
 

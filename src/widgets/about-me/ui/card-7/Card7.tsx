@@ -1,8 +1,8 @@
 import { Card } from '../card/Card'
-import Looper from 'public/assets/images/about/card7.svg'
-import Gmail from 'public/assets/icons/apps/about-me/gmail.svg'
-import Telegram from 'public/assets/icons/apps/about-me/telegram.svg'
-import LinkedIn from 'public/assets/icons/apps/about-me/linkedIn.svg'
+import Looper from 'public/media/images/about/card7.svg'
+import Gmail from 'public/media/icons/apps/about-me/gmail.svg'
+import Telegram from 'public/media/icons/apps/about-me/telegram.svg'
+import LinkedIn from 'public/media/icons/apps/about-me/linkedIn.svg'
 
 const contactInfo = [
 	{

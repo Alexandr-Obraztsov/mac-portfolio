@@ -3,8 +3,8 @@ import { Draggable } from '@/shared/ui'
 import { useState, useRef } from 'react'
 import { useApp } from '@/shared/lib'
 import { cn } from '@sglara/cn'
-import CloseIcon from 'public/assets/icons/shared/close.svg'
-import ArrowRightIcon from 'public/assets/icons/shared/arrow-right.svg'
+import CloseIcon from 'public/media/icons/shared/close.svg'
+import ArrowRightIcon from 'public/media/icons/shared/arrow-right.svg'
 import { sendContactForm } from '../api'
 
 export const ContactMe = ({ app }: AppProps) => {

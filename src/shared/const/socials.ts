@@ -1,6 +1,6 @@
-import github from 'public/assets/icons/desktop/github.png'
-import linkedin from 'public/assets/icons/desktop/linkedin.png'
-import telegram from 'public/assets/icons/desktop/telegram.png'
+import github from 'public/media/icons/desktop/github.png'
+import linkedin from 'public/media/icons/desktop/linkedin.png'
+import telegram from 'public/media/icons/desktop/telegram.png'
 
 export const socials = {
 	telegram: {

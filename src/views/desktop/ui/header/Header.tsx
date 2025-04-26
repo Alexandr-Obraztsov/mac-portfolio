@@ -3,7 +3,7 @@
 import { useAppDispatch } from '@/shared/lib'
 import { AppTypes } from '@/shared/model/App.types'
 import { openApp } from '@/shared/model/appsSlice/appsSlice'
-import Toggle from 'public/assets/icons/desktop/toggle.svg'
+import Toggle from 'public/media/icons/desktop/toggle.svg'
 import { useEffect, useState } from 'react'
 import useMedia from 'use-media'
 

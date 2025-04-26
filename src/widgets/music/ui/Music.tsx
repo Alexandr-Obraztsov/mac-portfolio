@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { sounds } from '../model/sounds'
 import { ControlPanel } from './ControlPanel'
-import Close from 'public/assets/icons/shared/close.svg'
+import Close from 'public/media/icons/shared/close.svg'
 export const Music = ({ app }: AppProps) => {
 	const { closeThisApp } = useApp({ app })
 	const [soundIndex, setSound] = useState(0)

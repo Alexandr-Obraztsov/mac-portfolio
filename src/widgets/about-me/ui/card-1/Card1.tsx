@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import cardImg from 'public/assets/images/about/card1.png'
+import cardImg from 'public/media/images/about/card1.png'
 import { Card } from '../card/Card'
-import Arrow from 'public/assets/icons/apps/about-me/arrow.svg'
+import Arrow from 'public/media/icons/apps/about-me/arrow.svg'
 
 export const Card1 = () => {
 	return (
