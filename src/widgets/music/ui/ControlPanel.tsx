@@ -4,7 +4,7 @@ import Pause from 'public/media/icons/widgets/music/pause.svg'
 import Play from 'public/media/icons/widgets/music/play.svg'
 import { useCallback, useEffect, useState } from 'react'
 import useSound from 'use-sound'
-import { sounds } from '../model/sounds'
+import { sounds } from '../../../shared/const/sounds'
 import { ProgressBar } from './ProgressBar'
 
 type Props = {

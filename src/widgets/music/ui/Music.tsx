@@ -2,9 +2,10 @@ import { useApp } from '@/shared/lib'
 import { AppProps } from '@/shared/model/App.types'
 import Image from 'next/image'
 import { useState } from 'react'
-import { sounds } from '../model/sounds'
 import { ControlPanel } from './ControlPanel'
 import Close from 'public/media/icons/shared/close.svg'
+import { sounds } from '@/shared/const/sounds'
+
 export const Music = ({ app }: AppProps) => {
 	const { closeThisApp } = useApp({ app })
 	const [soundIndex, setSound] = useState(0)
