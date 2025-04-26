@@ -78,98 +78,67 @@ const allImages = [
 ]
 
 export const DesktopLoader = () => {
-	// Состояние для отслеживания процесса загрузки
-	const [isLoaded, setIsLoaded] = useState(false) // Загружены ли все ресурсы
-	const [progress, setProgress] = useState(0) // Процент загрузки (от 0 до 100)
-	const [desktopPageLoaded, setDesktopPageLoaded] = useState(false) // Загружен ли компонент DesktopPage
+	const [isLoaded, setIsLoaded] = useState(false)
+	const [progress, setProgress] = useState(0)
 
-	// Этап 1: Предзагрузка компонента DesktopPage
 	useEffect(() => {
-		const preloadDesktopPage = async () => {
-			// Устанавливаем начальный прогресс
-			setProgress(5)
-
-			// Принудительно инициируем загрузку компонента DesktopPage
-			// Это вызовет фактическую загрузку JavaScript-кода компонента
-			const DesktopPageComponent = (
-				await import('@/views/desktop/ui/DesktopPage')
-			).DesktopPage
-
-			// После загрузки компонента увеличиваем прогресс и отмечаем компонент как загруженный
-			setProgress(10)
-			setDesktopPageLoaded(true)
-		}
-
-		preloadDesktopPage()
-	}, [])
-
-	// Этап 2: Загрузка медиа-ресурсов (только после загрузки DesktopPage)
-	useEffect(() => {
-		// Не начинаем загрузку медиа, пока не загружен основной компонент
-		if (!desktopPageLoaded) return
-
-		// Функция для предзагрузки одного изображения
 		const preloadImage = (src: string): Promise<void> => {
 			return new Promise(resolve => {
 				const img = document.createElement('img')
 				img.src = src.toString()
 				img.onload = () => resolve()
-				img.onerror = () => resolve() // Продолжаем даже при ошибке загрузки
+				img.onerror = () => resolve()
 			})
 		}
 
-		// Функция для предзагрузки аудиофайла
 		const preloadAudio = (src: string): Promise<void> => {
 			return new Promise(resolve => {
 				const audio = document.createElement('audio')
 				audio.src = src
 				audio.oncanplaythrough = () => resolve()
-				audio.onerror = () => resolve() // Продолжаем даже при ошибке загрузки
+				audio.onerror = () => resolve()
 			})
 		}
 
-		// Основная функция загрузки всех медиа-файлов
 		const preloadAllMedia = async () => {
-			// Загружаем изображения (60% от общего прогресса)
+			setProgress(5)
+
+			await import('@/views/desktop/ui/DesktopPage')
+			await import('lottie-react')
+
+			setProgress(10)
+
 			const imagePromises = allImages.map(img =>
 				preloadImage(typeof img === 'string' ? img : img.src).then(() => {
-					setProgress(prev => prev + 60 / allImages.length)
+					setProgress(prev => prev + 40 / allImages.length)
 				})
 			)
 
-			// Загружаем аудиофайлы (20% от общего прогресса)
 			const audioPromises = sounds.map(sound =>
 				preloadAudio(sound.src).then(() => {
-					setProgress(prev => prev + 20 / sounds.length)
+					setProgress(prev => prev + 40 / sounds.length)
 				})
 			)
 
-			// Ожидаем завершения загрузки всех файлов
 			await Promise.all([...imagePromises, ...audioPromises])
 
-			// Устанавливаем полный прогресс (100%)
 			setProgress(100)
 
-			// Добавляем небольшую задержку для плавного перехода
 			setTimeout(() => {
 				setIsLoaded(true)
 			}, 500)
 		}
 
 		preloadAllMedia()
-	}, [desktopPageLoaded])
+	}, [])
 
-	// Показываем экран загрузки, пока не завершена загрузка всех ресурсов
 	if (!isLoaded) {
 		return (
 			<div className='fixed inset-0 bg-black flex items-center justify-center z-50'>
 				<div className='text-white text-center'>
 					<div className='w-16 h-16 border-[8px] border-t-transparent border-white rounded-full animate-spin mx-auto mb-4'></div>
 					<p className='text-lg mb-2'>
-						{progress < 10
-							? 'Загрузка приложения...' // Показываем на первом этапе загрузки
-							: 'Загрузка ресурсов...'}{' '}
-						// Показываем на втором этапе загрузки
+						{progress < 10 ? 'Загрузка приложения...' : 'Загрузка ресурсов...'}
 					</p>
 					<div className='w-64 h-2 bg-gray-700 rounded-full'>
 						<div
@@ -183,6 +152,5 @@ export const DesktopLoader = () => {
 		)
 	}
 
-	// Когда все загружено, показываем рабочий стол
 	return <DesktopPage />
 }
