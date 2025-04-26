@@ -19,6 +19,7 @@ export const Draggable = ({ children, app, targetId }: Props) => {
 	const ref = useRef<HTMLDivElement>(null)
 
 	const onMouseDown = (event: React.MouseEvent<HTMLDivElement>) => {
+		setActiveThisApp()
 		if (targetId) {
 			let evTarget = event.target as HTMLElement
 			while (evTarget !== event.currentTarget) {
@@ -27,7 +28,6 @@ export const Draggable = ({ children, app, targetId }: Props) => {
 				evTarget = evTarget.parentElement as HTMLElement
 			}
 		}
-		setActiveThisApp()
 		setIsDragging(true)
 		setOffset({
 			x: event.clientX - pos!.x,
