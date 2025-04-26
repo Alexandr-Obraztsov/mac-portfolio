@@ -4,7 +4,6 @@ import { store } from '@/shared/model'
 import { Bebas_Neue, Open_Sans, Rubik } from 'next/font/google'
 import { Provider } from 'react-redux'
 import './globals.css'
-import { Preloader } from '@/shared/ui'
 
 const rubik = Rubik({
 	subsets: ['latin'],
@@ -31,9 +30,7 @@ export default function RootLayout({
 			<body
 				className={`${rubik.className} ${bebas.variable} ${openSans.variable} antialiased`}
 			>
-				<Provider store={store}>
-					<Preloader>{children}</Preloader>
-				</Provider>
+				<Provider store={store}>{children}</Provider>
 			</body>
 		</html>
 	)

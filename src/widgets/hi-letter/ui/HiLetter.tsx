@@ -6,7 +6,7 @@ export const HiLetter = ({ app }: AppProps) => {
 	const { closeThisApp } = useApp({ app })
 
 	return (
-		<div className='absolute inset-0 backdrop:blur flex justify-center items-center z-50 backdrop-blur-[2px] font-sf-pro'>
+		<div className='absolute inset-0 backdrop:blur flex justify-center items-center backdrop-blur-[2px] font-sf-pro'>
 			<div className='bg-hi-letter-bg rounded-[15px] p-[35px] w-[700px]'>
 				<Image
 					src={hiImg}

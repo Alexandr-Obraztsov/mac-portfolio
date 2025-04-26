@@ -1,7 +1,7 @@
 'use client'
 
-import { Preloader } from '@/shared/ui'
+import { DesktopLoader } from '@/shared/ui'
 
 export default function Home() {
-	return <Preloader />
+	return <DesktopLoader />
 }
